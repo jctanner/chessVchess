@@ -220,27 +220,11 @@ def main():
             print('ERROR: NO CHANGE FOUND!')
             import epdb; epdb.st()
 
-        '''
-        if color.name == 'black':
-            x1 = changes[1][0][0]
-            y1 = changes[1][0][1]
-            x2 = changes[0][0][0]
-            y2 = changes[0][0][1]
-        else:
-            x1 = changes[0][0][0]
-            y1 = changes[0][0][1]
-            x2 = changes[1][0][0]
-            y2 = changes[1][0][1]
-        '''
-
-        #to_reverse = color.name == 'white'
-        #to_reverse = move_number != 1
-        to_reverse = False
-
         # if there is a piece in the first spot, do not
         # reverse the move ...
         a = changes[0][0]
         b = changes[1][0]
+        to_reverse = False
         for spot in color.show_state():
             if spot[1] is None:
                 continue
