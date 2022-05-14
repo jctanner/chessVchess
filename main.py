@@ -69,7 +69,6 @@ class ChessDotCom:
         self.driver.execute_script(f"document.title = '{self.name}'")
 
     def click_button_by_text(self, btext, lower=True):
-        # ind_elements(by=By.CLASS_NAME, value=name)
         buttons = self.driver.find_elements(By.TAG_NAME, value='button')
         for button in buttons:
             print(f'BUTTON {button.text}')
@@ -157,7 +156,6 @@ class ChessDotCom:
         actions.move_to_element(dst).move_by_offset(0, 0).click().perform()
 
 
-
 def main():
 
     # black goes first, so create it first ...
@@ -175,33 +173,6 @@ def main():
     white.click_button_by_text('play')
     white.remove_overlay()
     white.set_title()
-
-    #chess1.show_state()
-    
-    '''
-    chess1.move_piece(1, 2, 1, 3)
-    chess1.update_state()
-    time.sleep(1)
-    chess1.move_piece(2, 2, 2, 3)
-    chess1.update_state()
-    time.sleep(1)
-    '''
-
-    '''
-    # good for white ...
-    for x in range(1,9):
-        black.move_position(x, 2, x, 3)
-        black.update_state()
-        time.sleep(1)
-    '''
-
-    '''
-    # good for black
-    for x in range(8, 0, -1):
-        black.move_position(x, 7, x, 6)
-        black.update_state()
-        time.sleep(1)
-    '''
 
     time.sleep(2)
 
@@ -244,11 +215,9 @@ def main():
             print(e)
             print('could not make move!')
             continue
-            #import epdb; epdb.st()
 
         time.sleep(.5)
 
-        #import epdb; epdb.st()
         if color.name == 'white':
             color = black
         elif color.name == 'black':
