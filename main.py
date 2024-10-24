@@ -59,7 +59,7 @@ class ChessDotCom:
         time.sleep(.5)
 
     def __repr__(self):
-        return f'<ChesDotCom {self.name}>'
+        return f'<ChessDotCom {self.name}>'
 
     def remove_overlay(self):
         # remove the numbered overly that gets in the way of clicking
